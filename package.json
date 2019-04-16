@@ -1,0 +1,49 @@
+{
+  "name": "loginsystemserver",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "commit": "git add . && git-cz",
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint",
+    "dev": "nodemon server/server.js --watch common --watch server",
+    "dev7": "nodemon --exec babel-node  server/server.js --watch common --watch server",
+    "swagger": "lb export-api-def --json -o \"./swagger/swagger.json\""
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "commitizen": "^3.0.7",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "cz-conventional-changelog": "^2.1.0",
+    "helmet": "^3.10.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "nodemon": "^1.18.11"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "MIT",
+  "description": "loginSystemServer"
+}
